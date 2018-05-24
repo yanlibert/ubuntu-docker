@@ -2,7 +2,7 @@
     "variables": {
 	"home":    "{{env `HOME`}}",
 	"out_dir": "custombox",
-	"name":    "ubuntukube",
+	"name":    "ubundock",
 	"box":     "ubuntu-16.04",
 	"repo":    "bento",
 	"headless": "true",
@@ -21,7 +21,11 @@
 	{
 	    "type": "shell",
 	    "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S sh '{{.Path}}'",
-	    "scripts": "scripts/setup.sh"
+	    "inline": [
+		"env DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::='--force-confnew' -q --force-yes -y dist-upgrade",
+		"apt-get update -y",
+		"apt-get install -y docker.io"
+	    ]
 	}
     ],
     "post-processors": [{
