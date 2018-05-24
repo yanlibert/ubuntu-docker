@@ -1,5 +1,13 @@
 ### Creer une VM provisionnée avec Docker
 
+## Prérequis
+Installer Packer
+```sh
+wget https://releases.hashicorp.com/packer/1.2.3/packer_1.2.3_linux_amd64.zip
+unzip packer_1.2.3_linux_amd64.zip 
+sudo cp packer /usr/bin
+```
+
 ```sh
 git clone https://github.com/yanlibert/ubuntu-docker.git
 cd ubuntu-docker
