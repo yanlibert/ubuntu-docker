@@ -1,0 +1,24 @@
+# Compiled files
+*.tfstate
+*.tfstate.backup
+
+# Module directory
+.terraform/
+
+# Emacs file
+*~
+\#*\#
+
+# List of available hosts
+ip_list.txt
+
+# System specific hosts
+hosts/*
+
+# VM
+output-virtualbox-ovf/*
+
+# Output files
+.vagrant/*
+packer_cache/*
+custombox/*
